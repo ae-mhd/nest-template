@@ -7,8 +7,8 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import * as bcrypt from 'bcrypt';
-@Entity()
-export class User {
+@Entity('users')
+export class Users {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -24,7 +24,7 @@ export class User {
   @Column()
   password: string;
 
-  @Column()
+  @Column({ nullable: true })
   avatarUrl: string;
 
   @CreateDateColumn()
