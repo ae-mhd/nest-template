@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config';
 import { UserModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
 import dbConfig from './config/db.config';
 import dbConfigProduction from './config/db.config.production';
 
@@ -19,6 +20,7 @@ import dbConfigProduction from './config/db.config.production';
         process.env.NODE_ENV === 'production' ? dbConfigProduction : dbConfig,
     }),
     UserModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

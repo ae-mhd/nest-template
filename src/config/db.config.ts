@@ -11,7 +11,7 @@ export default registerAs(
     username: 'postgres',
     password: 'admin',
     database: 'standardDB',
-    entities: [path.resolve(__dirname, '..' + '/../**/*.entity.js')], //get all entities
+    entities: [path.resolve(__dirname, '../**/*.entity{.ts,.js}')], //get all entities
     //   migrations: ['src/migrations/*.ts'], //get all migrations
     synchronize: true, //synchronize the database, true for development, false for production
   }),
