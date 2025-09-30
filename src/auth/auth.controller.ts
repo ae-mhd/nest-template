@@ -18,6 +18,10 @@ export class AuthController {
   @UseGuards(LocalAuthGuard)
   @Post('login')
   login(@Request() req: any) {
-    return req.user;
+    const token = this.authService.login(req.user.id as number);
+    return {
+      id: req.user.id,
+      token,
+    };
   }
 }
